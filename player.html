@@ -1,0 +1,64 @@
+<html>
+ <head>
+  <title>N-Screen Player</title>
+
+  <script type="text/javascript" src="lib/flowplayer-3.2.6.js"></script>
+
+  <script type="text/javascript" src="conf.js"></script>
+  <script type="text/javascript" src="lib/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="lib/jquery-ui-1.8.10.custom.min.js"></script>
+  <script type="text/javascript" src="lib/jquery.ui.touch.js"></script>
+
+
+
+  <script type="text/javascript" src="lib/namedwebsockets.js"></script>
+
+  <script type="text/javascript" src="lib/hub.js"></script>
+  <script type="text/javascript" src="lib/nws_handling.js"></script><!-- depends on jquery -->
+
+  <link type="text/css" rel="stylesheet" href="css/new.css" />
+
+
+<script type="text/javascript">
+
+function init(){
+  my_name="telly"+Math.floor(Math.random()*9999);
+  //set capabilities
+  capabilities = {"streamingVideo":"supported"};
+}
+
+$(document).bind('play_video', function () {
+
+  //add it to the html5 video thingy
+    $("#title").html(current_programme_title);
+  //  $("#vid").attr("poster",current_programme_image);
+  
+    var video = document.getElementById("vid");
+
+    $f("player", "flowplayer/flowplayer-3.2.7.swf", {
+
+      "clip": {
+       "url": current_programme,
+       "poster": current_programme_image,
+       "scaling": "fit",
+       "autoBuffering": true
+      }
+    
+    });
+
+});
+
+
+</script>
+
+</head>
+
+<body onload="javascript:init()">
+ <div id="player">
+ </div>
+
+</body>
+</html>
+
+
+
