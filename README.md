@@ -2,6 +2,8 @@ This was an experiment in using named web sockets with an old demo from the NoTu
 
 For my own reference (see (NamedWebSockets page)[https://github.com/namedwebsockets/networkwebsockets/wiki/Building-a-Network-Web-Socket-Proxy-from-Source]) on a Raspebrry Pi 2:
 
+*note* this only works with jessie, I think - the default on wheezy is too old. Try http://www.zipplet.co.uk/index.php/content/raspberrypi_golang otherwise, it's easy.
+
     sudo apt-get install golang mercurial -y
 
     mkdir go
