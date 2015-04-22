@@ -6,12 +6,11 @@ For my own reference (see (NamedWebSockets page)[https://github.com/namedwebsock
 
     mkdir go
     cd go
+    export GOPATH=/home/pi/go
 
     go get github.com/namedwebsockets/cmd/networkwebsockets
 
     cd `go list -f '{{.Dir}}' github.com/namedwebsockets/cmd/networkwebsockets`
-
-    export GOPATH=/home/pi/go
 
     go run run.go -port=9009    
 
